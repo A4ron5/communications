@@ -7,12 +7,5 @@ import ru.safin.communications.common.domain.DomainRules;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Rules extends DomainRules {
-  enum Distribution {
-    RANDOM,
-    SELF,
-    LEADER
-  }
-
-  private Distribution lootDistribution;
 
 }
