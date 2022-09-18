@@ -18,6 +18,7 @@ public class Group extends BaseEntity {
   private List<String> participantsUserIds;
   private String name;
   private Rules rules;
+  private Boolean open;
 
   @CreatedDate
   private LocalDateTime creationDate;
