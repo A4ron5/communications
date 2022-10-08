@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/communications"
+
+application:
+  domain:
+    players: 4
