@@ -1,5 +1,6 @@
 package ru.safin.communications.groups;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +13,18 @@ import javax.validation.constraints.NotBlank;
 @Validated
 @RestController
 @RequestMapping("/api/groups")
+@RequiredArgsConstructor
 public class GroupsRestController {
+
+  private final GroupsValidator validator;
+  private final GroupService service;
+  private RestDtoConverter converter;
 
   @PostMapping("/create")
   public ResponseEntity<Group> createGroup(@Valid @RequestBody GroupDto groupDto) {
-    return null;
+    validator.canUserCreateGroup(groupDto.userId);
+
+    return ResponseEntity.ok(service.create(groupDto));
   }
 
   @PutMapping ("/add/{id}")

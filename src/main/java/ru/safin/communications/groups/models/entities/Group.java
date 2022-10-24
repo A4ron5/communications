@@ -1,5 +1,6 @@
 package ru.safin.communications.groups.models.entities;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.annotation.CreatedDate;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@Builder
 @Document
 @EqualsAndHashCode(callSuper = true)
 public class Group extends BaseEntity {

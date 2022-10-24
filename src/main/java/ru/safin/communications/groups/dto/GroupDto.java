@@ -16,10 +16,10 @@ public class GroupDto {
   public String userId;
 
   @NotEmpty
-  public List<String> playersIds;
+  public List<@NotBlank @Size(min = 3, max = 8) String> playersIds;
 
-  @Min(3)
-  @Max(12)
+  @NotBlank
+  @Size(min = 3, max = 8)
   public String name;
 
   @NotNull
