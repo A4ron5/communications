@@ -27,11 +27,6 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
   public T create(T object) {
     log.info("Create entity {}", object);
 
-    String id = object.getId();
-    if (repository.existsById(id)) {
-      throw BusinessException.create(String.format("Entity with id=%s already exist", id));
-    }
-
     return repository.save(object);
   }
 
